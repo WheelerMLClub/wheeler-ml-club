@@ -1,0 +1,22 @@
+/* custom CSS */
+
+@media only screen and (max-width: 768px) {
+    footer div[class*="col-"] {
+        margin: 25px auto;
+    }
+}
+
+footer a, footer a:hover {
+    color: white;
+}
+footer a:not(.logo-footer) { 
+    text-decoration: underline;
+}
+.logo-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-footer:hover {
+    text-decoration: none;
+}
