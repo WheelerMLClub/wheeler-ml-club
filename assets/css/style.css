@@ -1,5 +1,79 @@
 /* custom CSS */
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 0 15px;
+    font-size: 24px;
+}
+.navbar .navbar-collapse {
+    padding: 15px 0;
+}
+.navbar .navbar-brand {
+    font-size: 24px;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        font-size: 22px;
+    }
+    
+    .navbar .navbar-brand img {
+        margin-right: 5px;
+    }
+    .navbar .navbar-brand {
+        margin-right: 5px;
+        font-size: 22px;
+    }
+
+
+    .navbar .nav-item .nav-link {
+        display: inline-block;
+    }
+    .navbar .nav-item .nav-link::after {
+        margin: auto;
+        left: 0;
+        right: inherit;
+    }
+}
+.navbar .nav-item .nav-link {
+    position: relative;
+    padding: 0.1rem 0;
+    margin: auto .5rem;
+    color: black;
+}
+.navbar .nav-item .nav-link:hover {
+    color: black;
+}
+.navbar .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: #dc3545;
+    transition: all .5s;
+}
+.navbar .nav-item .nav-link:hover::after, .navbar .nav-item.active .nav-link::after {
+    background-color: #dc3545;
+    transform: scaleX(1);
+}
+
+/* FOOTER */
 @media only screen and (max-width: 768px) {
     footer div[class*="col-"] {
         margin: 25px auto;
@@ -7,9 +81,9 @@
 }
 
 footer a, footer a:hover {
-    color: white;
+    color: black;
 }
-footer a:not(.logo-footer) { 
+footer a:not(.logo-footer) {
     text-decoration: underline;
 }
 .logo-footer {
@@ -21,6 +95,7 @@ footer a:not(.logo-footer) {
     text-decoration: none;
 }
 
+/* SPLASH HEADER */
 .splash-header {
     width: 100%;
     padding: 30px 30px;
@@ -42,12 +117,15 @@ footer a:not(.logo-footer) {
     width: 50%;
 }
 .splash-header .hero-text {
-    background-color: rgba(0,0,0,0.75);
-    padding: 25px;
-    margin-right: 15px;
     color: white;
     width: 50%;
     float: right;
+    position: relative;
+}
+.splash-header .hero-text .position-relative {
+    background-color: rgba(0,0,0,0.75);
+    padding: 25px;
+    margin-right: 15px;
 }
 .splash-header .hero-text .join-btn {
     margin-top: 15px;
@@ -77,17 +155,24 @@ footer a:not(.logo-footer) {
     }
 }
 
+/* CONTENT */
 .content-container {
-    margin: 7.5rem auto;
+    padding: 2.5rem 15px;
 }
-.content-container.why-us .row, .content-container.why-ml .row {
+.content-container.offers {
+    background-color: whitesmoke;
+}
+.content-container.why-ml {
+    background-color: lightskyblue;
+}
+.content-container.what-we-are .row, .content-container.why-ml .row {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 .content-container.why-ml .row {
-    margin: 5rem auto;
+    margin: 2.5rem auto;
 }
 .content-container.why-ml .row:first-child {
     margin-bottom: 0;
@@ -95,7 +180,7 @@ footer a:not(.logo-footer) {
 .content-container.why-ml .row:nth-child(2) {
     margin-top: 0;
 }
-.content-container div[class*='col'] {
+.content-container:not(.lessons) div[class*='col'] {
     margin-top: 1rem;
 }
 .content-container h2 {
@@ -103,7 +188,7 @@ footer a:not(.logo-footer) {
     text-align: left;
     margin-top: 15px;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 .content-container h2::after {
     content: "";
@@ -141,6 +226,128 @@ footer a:not(.logo-footer) {
     color: royalblue;
     text-decoration: underline;
 }
-.content-container.join div[class*='col'] {
-    margin: 5rem auto;
+.content-container.join .row {
+    margin: 3rem auto 5rem auto;
+}
+
+.content-container.lessons small {
+    font-size: 1rem;
+}
+.content-container.lessons p, .content-container.lessons a {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+.content-container.lessons a {
+    margin-right: 15px;
+}
+.content-container.lessons h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+}
+.lesson-list .row {
+    border: 1px solid rgba(0,0,0,0.125);
+    height: auto;
+    margin: 2.5rem 0;
+    position: relative;
+}
+
+.lesson-list .col-md-8 {
+    padding: 15px;
+}
+
+.lesson-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+    .lesson-list .row {
+        margin: 2.5rem 15px;
+        padding-bottom: 15px;
+    }
+    .lesson-list .row {
+        height: auto;
+    }
+    .lesson-list img {
+        height: auto;
+    }
+}
+.lesson-list div[class*='col']:first-child {
+    padding: 0;
+}
+
+
+
+/* ANIMATIONS */
+.grow-animation {
+    opacity: 0;
+    -moz-transition: all 1000ms ease-out;
+    -webkit-transition: all 1000ms ease-out;
+    -o-transition: all 1000ms ease-out;
+    transition: all 1000ms ease-out;
+    transform: scale(0.1, 0.1);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.do-grow-animation {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.slide-up {
+    opacity: 0;
+    -moz-transition: all 750ms ease-out;
+    -webkit-transition: all 750ms ease-out;
+    -o-transition: all 750ms ease-out;
+    transition: all 750ms ease-out;
+    bottom: -100px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.do-slide-up {
+    opacity: 1;
+    bottom: 0;
+}
+
+.slide-left {
+    opacity: 0;
+    -moz-transition: all 1000ms ease-out;
+    -webkit-transition: all 1000ms ease-out;
+    -o-transition: all 1000ms ease-out;
+    transition: all 1000ms ease-out;
+    left: -500px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.do-slide-left {
+    opacity: 1;
+    left: 0;
+}
+
+.slide-right {
+    opacity: 0;
+    -moz-transition: all 1000ms ease-out;
+    -webkit-transition: all 1000ms ease-out;
+    -o-transition: all 1000ms ease-out;
+    transition: all 1000ms ease-out;
+    left: 500px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.do-slide-right {
+    opacity: 1;
+    left: 0;
+}
+
+.delay-150 {
+    transition-delay: 150ms;
+}
+.delay-300 {
+    transition-delay: 300ms;
 }
