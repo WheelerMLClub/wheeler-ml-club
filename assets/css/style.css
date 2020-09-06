@@ -98,6 +98,7 @@ footer a:not(.logo-footer) {
 /* SPLASH HEADER */
 .splash-header {
     width: 100%;
+    margin-top: 60px;
     padding: 30px 30px;
     height: auto;
     display: flex;
@@ -218,11 +219,11 @@ footer a:not(.logo-footer) {
 .content-container.offers p, .content-container.join p, .content-container.why-ml p {
     text-align: center;
 }
-.content-container a {
+.content-container a:not(.btn) {
     font-size: 1.3rem;
     color: royalblue;
 }
-.content-container a:hover {
+.content-container a:not(.btn):hover {
     color: royalblue;
     text-decoration: underline;
 }
@@ -230,6 +231,9 @@ footer a:not(.logo-footer) {
     margin: 3rem auto 5rem auto;
 }
 
+.content-container.lessons {
+    margin-top: 60px;
+}
 .content-container.lessons small {
     font-size: 1rem;
 }
