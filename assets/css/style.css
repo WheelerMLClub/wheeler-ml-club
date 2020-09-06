@@ -1,6 +1,6 @@
 /* custom CSS */
 
-body {
+body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden !important;
@@ -310,14 +310,14 @@ footer a:not(.logo-footer) {
     -webkit-transition: all 750ms ease-out;
     -o-transition: all 750ms ease-out;
     transition: all 750ms ease-out;
-    bottom: -100px;
+    transform: translateY(100px);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .do-slide-up {
     opacity: 1;
-    bottom: 0;
+    transform: translateY(0);
 }
 
 .slide-left {
@@ -326,14 +326,14 @@ footer a:not(.logo-footer) {
     -webkit-transition: all 1000ms ease-out;
     -o-transition: all 1000ms ease-out;
     transition: all 1000ms ease-out;
-    left: -500px;
+    transform: translateX(-500px);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .do-slide-left {
     opacity: 1;
-    left: 0;
+    transform: translateX(0);
 }
 
 .slide-right {
@@ -342,14 +342,14 @@ footer a:not(.logo-footer) {
     -webkit-transition: all 1000ms ease-out;
     -o-transition: all 1000ms ease-out;
     transition: all 1000ms ease-out;
-    left: 500px;
+    transform: translateX(500px);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .do-slide-right {
     opacity: 1;
-    left: 0;
+    transform: translateX(0);
 }
 
 .delay-150 {
