@@ -20,3 +20,127 @@ footer a:not(.logo-footer) {
 .logo-footer:hover {
     text-decoration: none;
 }
+
+.splash-header {
+    width: 100%;
+    padding: 30px 30px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightskyblue;
+    position: relative;
+
+}
+.splash-header .splash-header-content {
+    max-width: 1140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.splash-header img {
+    width: 50%;
+}
+.splash-header .hero-text {
+    background-color: rgba(0,0,0,0.75);
+    padding: 25px;
+    margin-right: 15px;
+    color: white;
+    width: 50%;
+    float: right;
+}
+.splash-header .hero-text .join-btn {
+    margin-top: 15px;
+    font-size: 1.15rem;
+}
+@media only screen and (max-width: 768px) {
+    .splash-header img {
+        width: 100%;
+        height: auto;
+    }
+    .splash-header .hero-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .splash-header .hero-text h1 {
+        font-size: 1.5rem;
+        width: 90%;
+    }
+    .splash-header .hero-text h3 {
+        font-size: 1.15rem;
+    }
+}
+
+.content-container {
+    margin: 7.5rem auto;
+}
+.content-container.why-us .row, .content-container.why-ml .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.content-container.why-ml .row {
+    margin: 5rem auto;
+}
+.content-container.why-ml .row:first-child {
+    margin-bottom: 0;
+}
+.content-container.why-ml .row:nth-child(2) {
+    margin-top: 0;
+}
+.content-container div[class*='col'] {
+    margin-top: 1rem;
+}
+.content-container h2 {
+    font-weight: 700;
+    text-align: left;
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.content-container h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin-top: 10px;
+    height: 7.5px;
+    width: 150px;
+    
+    background-color: #dc3545;
+}
+.content-container p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+.content-container h3, .content-container i {
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+}
+.content-container i {
+    color: royalblue;
+}
+.content-container.offers p, .content-container.join p, .content-container.why-ml p {
+    text-align: center;
+}
+.content-container a {
+    font-size: 1.3rem;
+    color: royalblue;
+}
+.content-container a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}
+.content-container.join div[class*='col'] {
+    margin: 5rem auto;
+}
