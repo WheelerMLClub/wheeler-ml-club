@@ -5,6 +5,9 @@ body {
     padding: 0;
     overflow-x: hidden !important;
 }
+.bg-light {
+    background-color: whitesmoke !important;
+}
 
 /* NAVBAR */
 .navbar {
